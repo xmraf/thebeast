@@ -52,7 +52,7 @@
 
 
             $curl['code'] = [
-                'url' =>  $main_url."811".$rand,
+                'url' =>  $main_url."8113".$rand,
                 'parser' => null,
                 'header' => [
                     // "Authorization:  Basic ".$this->token,
@@ -65,11 +65,11 @@
             $results['result']['code'] = json_decode(getCurl($curl['code']), true);
             
             if($results['result']['code']['rst_msg']="Coupon does not exist."){
-                echo "[ DIE ] - 811".$rand." ".$results['result']['code']['rst_msg'].PHP_EOL;
+                echo "[ DIE ] - 8113".$rand." ".$results['result']['code']['rst_msg'].PHP_EOL;
             }
             else{
-                file_put_contents("LIVEKFC.txt", "\n811{$rand} | Status: {$results['result']['code']['rst_msg']}", FILE_APPEND);
-                echo "[ d ] - 811".$rand." ".$results['result']['code']['rst_msg'].PHP_EOL;
+                file_put_contents("LIVEKFC.txt", "\n8113{$rand} | Status: {$results['result']['code']['rst_msg']}", FILE_APPEND);
+                echo "[ d ] - 8113".$rand." ".$results['result']['code']['rst_msg'].PHP_EOL;
             }
 
             $callback = json_encode($results);
